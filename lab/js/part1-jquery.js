@@ -170,6 +170,42 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 // This is a popular pattern that you'll run into in programs that run jQuery. It says not to run
 // the function passed to `ready` until the HTML document is fully loaded and all scripts have
 // been interpreted. It is, therefore, an example of asynchronous behavior.
+
+var productName, storeName, streetAddress, zipcode, includeClosedStores, savesSearch, filterByColor,
+userInput = {
+  "PRODUCT_NAME": productName,
+  "STORE_NAME": storeName,
+  "STREET_ADDRESS": streetAddress,
+  "ZIPCODE": zipcode,
+  "INCLUDE_CLOSED": includeClosedStores,
+  "SAVE_SEARCH": savesSearch,
+  "FILTER_BYCOLOR": filterByColor //put the selector value call here
+};
+
 $(document).ready(function() {
   // Do your stuff here
+  $("#text-label1").text("Product");
+  $("#text-label2").text("Store Name");
+  $("#text-label3").text("Address");
+  $("#number-label").text("Zipcode");
+  $("#checkbox-label1").text("Include currently closed store");
+  $("#checkbox-label2").text("Save this search information");
+  $("#color-label").text("Filter by Color");
+
+  $("#text-input1").val("e.g. coffee mugs");
+  $("#text-input2").val("optional");
+  $("#text-input3").val("your location");
+  $("#number-input4").val("");
+  $("#color-input").val("#900C3F");
+
+
+  $("#cbox-input1").prop('disabled', false);
+  $('#cbox-input2').prop('disabled', false);
+
+  productName = $("#text-input1").val();
+  storeName = $("#text-input2").val();
+  streetAddress = $("#text-input3").val();
+  zipcode = $("#number-input4").val();
+  filterByColor = $("#color-input").val();
+
 });
